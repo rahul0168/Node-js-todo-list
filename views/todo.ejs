@@ -48,6 +48,16 @@
         <button class="btn btn-primary" type="submit">Add task</button>
         <button class="btn btn-danger" type="button">Delete task</button>
       </form>
+
+      <ul class="list-group">
+        <% for (let i of todo_list) { %>
+        <li class="list-group-item list-group-item-primary">
+            <span style="float: right"><a href="/delete-contact/?id=<%= i.id %>"><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> </button></a></span>
+        <%= i.description %> <%= i.due_date %> <span style="float: right;padding: 0px 24px 0px 0px;"><%= i.category %></span>
+        </li>
+
+        <% } %>
+      </ul>
     </div>
   </body>
 </html>

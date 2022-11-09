@@ -10,7 +10,7 @@ const TodoSchema = new mongoose.Schema({
         required:true
     },
     due_date:{
-        type:Date,
+        type:String,
         required:true
     }
 });

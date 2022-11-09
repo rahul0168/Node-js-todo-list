@@ -1,7 +1,21 @@
 module.exports.todo = function (req, res){
-    return res.render('todo',{
-        title:"Todo List"
-    });
+
+    Todolists.find({}, function(err, Todolists){
+        if(err){
+            console.log("error in fetching contacts from db");
+            return;
+        }
+        return res.render('todo',{
+            title:"Todo List",
+            todo_list: Todolists
+        });
+  
+    })
+    
+    // return res.render('todo',{
+    //     title:"Todo List",
+    //     todo_list: todolist
+    // });
 }
 const Todolists = require('../models/todolist');
 
