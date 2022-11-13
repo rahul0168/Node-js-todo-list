@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 8080;
+app.use(express.urlencoded());
 
+app.use(express.static('assets'));
 //ue express router
 app.use('/', require('./routes'));
 const db = require('./config/mongoose');

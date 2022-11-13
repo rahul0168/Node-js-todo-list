@@ -30,7 +30,7 @@ module.exports.todocreate = function(req,res)
           console.log('error in creating');
           return;
         }
-        console.log('*****',newTask);
+        //console.log('*****',newTask);
         return res.redirect('/');
          });
 }
