@@ -1,3 +1,4 @@
+const Todolists = require('../models/todolist');
 module.exports.todo = function (req, res){
 
     Todolists.find({}, function(err, Todolists){
@@ -12,15 +13,11 @@ module.exports.todo = function (req, res){
   
     })
     
-    // return res.render('todo',{
-    //     title:"Todo List",
-    //     todo_list: todolist
-    // });
 }
-const Todolists = require('../models/todolist');
 
+//create list
 module.exports.todocreate = function(req,res)
-{   //console.log(req.body.description);
+{   
     Todolists.create({
         description:req.body.description,
         category:req.body.category,
@@ -30,11 +27,11 @@ module.exports.todocreate = function(req,res)
           console.log('error in creating');
           return;
         }
-        //console.log('*****',newTask);
         return res.redirect('/');
          });
 }
 
+//single delete
 module.exports.singleDelete = function(req, res) {
     let id = req.query.id;
     Todolists.findByIdAndDelete(id, function(err){
@@ -46,6 +43,7 @@ module.exports.singleDelete = function(req, res) {
     });
 }
 
+//Multiple delete
 module.exports.multipleDelete =function(req, res) {
     let ids = req.body.task;
     // if single task is to be deleted

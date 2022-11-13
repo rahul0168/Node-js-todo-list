@@ -131,30 +131,30 @@
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <script>
     $(document).ready(function () {
 
-        var id = $('#check_box_id').val() + 1;
+var id = $('#check_box_id').val() + 1;
 
-        for (let i = id - 1; i >= 0; i--) {
+for (let i = id - 1; i >= 0; i--) {
 
-            $('#check_box_' + i + '').change(function () {
+    $('#check_box_' + i + '').change(function () {
 
-                if ($(this).prop('checked')) {
-                    console.log('#widget_heading_' + i);
+        if ($(this).prop('checked')) {
+            console.log('#widget_heading_' + i);
 
-                    $('#widget_heading_' + i).addClass("strike");
-                    $('#widget_subheading_' + i).addClass("strike");
-                } else {
-
-
-                    $('#widget_heading_' + i).removeClass("strike");
-                    $('#widget_subheading_' + i).removeClass("strike");
+            $('#widget_heading_' + i).addClass("strike");
+            $('#widget_subheading_' + i).addClass("strike");
+        } else {
 
 
-                }
-            });
+            $('#widget_heading_' + i).removeClass("strike");
+            $('#widget_subheading_' + i).removeClass("strike");
+
+
         }
     });
+}
+});
 </script>
+
