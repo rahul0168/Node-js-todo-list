@@ -1,63 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/home.css"> -->
+    <style>
+        body {
+            background-color: #7f7f7f;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            color: #565656;
+        }
+
+        .badge-Personal {
+            color: #fff;
+            background-color: #00ffa2;
+        }
+
+        .badge-Work {
+            color: #fff;
+            background-color: #4000ff;
+        }
+        .badge-School {
+            color: #fff;
+            background-color: #ff00e6;
+        }
+
+        .badge-Urgent {
+            color: #fff;
+            background-color: #ff0000;
+        }
+
+
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 0.88rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            text-align: left;
+            background-color: #6200EA;
+        }
+
+        i {
+            font-style: italic;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .card {
+            box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+            border-width: 0;
+            transition: all .2s;
+        }
+
+        .card-header:first-child {
+            border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            border-bottom-width: 1px;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-right: 0.625rem;
+            height: 3.5rem;
+            background-color: #fff;
+        }
+
+        .widget-subheading {
+            color: #858a8e;
+            font-size: 10px;
+        }
+
+        .card-header.card-header-tab .card-header-title {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .card-header .header-icon {
+            font-size: 1.65rem;
+            margin-right: 0.625rem;
+        }
+
+        .card-header.card-header-tab .card-header-title {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .btn-actions-pane-right {
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .text-capitalize {
+            text-transform: capitalize !important;
+        }
+
+        .scroll-area-sm {
+            height: 288px;
+            overflow-x: hidden;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .list-group {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .todo-indicator {
+            position: absolute;
+            width: 4px;
+            height: 60%;
+            border-radius: 0.3rem;
+            left: 0.625rem;
+            top: 20%;
+            opacity: .6;
+            transition: opacity .2s;
+        }
+
+        .bg-warning {
+            background-color: #f7b924 !important;
+        }
+
+        .widget-content {
+            padding: 1rem;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .widget-content .widget-content-wrapper {
+            display: flex;
+            flex: 1;
+            position: relative;
+            align-items: center;
+        }
+
+        .widget-content .widget-content-right.widget-content-actions {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        .widget-content .widget-content-right {
+            margin-left: auto;
+        }
+
+        .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+
+        .btn {
+            position: relative;
+            transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+        }
+
+        .btn-outline-success {
+            color: #3ac47d;
+            border-color: #3ac47d;
+        }
+
+        .btn-outline-success:hover {
+            color: #fff;
+            background-color: #3ac47d;
+            border-color: #3ac47d;
+        }
+
+        .btn-outline-success:hover {
+            color: #fff;
+            background-color: #3ac47d;
+            border-color: #3ac47d;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #3f6ad8;
+            border-color: #3f6ad8;
+        }
+
+        .btn {
+            position: relative;
+            transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+            outline: none !important;
+        }
+
+        .card-footer {
+            background-color: #fff;
+        }
+
+       .strike{
+            text-decoration: line-through;
+        }
+        .container{
+            max-width: 600px !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
     <div class="container">
-      <h1>Todo List</h1>
-      <form  action="create-task" method="post">
-        <div class="row">
-          <div class="col-3">
-            <div class="form-group">
-              <label for="">Description</label>
-              <input
-                type="text"
-                class="form-control"
-                name="description"
-                placeholder="Description"
-                id=""
-              />
+        <h1 class="text-center">Todo List</h1>
+        <form action="create-task" method="post">
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <input type="text" class="form-control" name="description" placeholder="Description" id="" />
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Select Category</label>
+                        <select class="form-control" name="category" id="">
+                            <option>Personal</option>
+                            <option>Work</option>
+                            <option>School</option>
+                            <option>Urgent Work</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="">Due Date</label>
+                        <input type="date" class="form-control" name="due_date" id="" />
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-3">
-            <div class="form-group">
-              <label for="">Select Category</label>
-              <select class="form-control" name="category" id="">
-                <option>Personal</option>
-                <option>Work</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="form-group">
-                <label for="">Due Date</label>
-              <input type="date" class="form-control" name="due_date" id="" />
-            </div>
-          </div>
+            <br>
+            <div class="text-center">
+            <button class="btn btn-primary" type="submit"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                task</button>
+            <button type="submit" class="btn btn-danger" form="delete1">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                DELETE TASKS
+            </button>
         </div>
-        <br>
-        <button class="btn btn-primary" type="submit">Add task</button>
-        <button class="btn btn-danger" type="button">Delete task</button>
-      </form>
+        </form>
+        <div>
+        </div>
+  
+    <br>
+    <div class="row d-flex justify-content-center container">
+        <div class="col-md-12">
+            <div class="card-hover-shadow-2x mb-3 card">
+                <div class="card-header-tab card-header">
+                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Task Lists</div>
+                </div>
+                <div class="scroll-area-sm">
+                    <perfect-scrollbar class="ps-show-limits">
+                        <div style="position: static;" class="ps ps--active-y">
+                            <div class="ps-content">
+                                <ul class=" list-group list-group-flush">
+                                    <% for(let i=todo_list.length - 1; i>= 0; i--) { %>
+                                        <input type="hidden" name="" id="check_box_id" value="<%= i %>">
+                                        <li class="list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-wrapper">
+                                                    <div class="widget-content-left mr-2">
+                                                        <div class="custom-checkbox custom-control">
+                                                            <input type="checkbox" id="check_box_<%= i %>" name=task value="<%= todo_list[i]._id %>">
+                                                            <label
+                                                                class="custom-control-label"
+                                                                for="exampleCustomCheckbox12">&nbsp;</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading" id="widget_heading_<%=i%>">
+                                                            <%= todo_list[i].description %>
+                                                                <div class="badge badge-danger ml-2"><span
+                                                                        class="badge badge-pill badge-<%=todo_list[i].category%>">
+                                                                        <%=todo_list[i].category%>
+                                                                    </span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="widget-subheading " id="widget_subheading_<%=i%>"><i> <i
+                                                                    class="far fa-calendar-alt" aria-hidden="true"></i>
+                                                                &nbsp;
+                                                                <%= todo_list[i].due_date %>
+                                                            </i></div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <a href="/delete_todo_single/?id=<%= todo_list[i]._id %>">
+                                                            <i class="fa fa-times" style="color: red;" aria-hidden="true"></i>
+                                                        </a>
 
-      <ul class="list-group">
-        <% for (let i of todo_list) { %>
-        <li class="list-group-item list-group-item-primary">
-            <span style="float: right"><a href="/delete-contact/?id=<%= i.id %>"><button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> </button></a></span>
-        <%= i.description %> <%= i.due_date %> <span style="float: right;padding: 0px 24px 0px 0px;"><%= i.category %></span>
-        </li>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <% } %>
 
-        <% } %>
-      </ul>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </perfect-scrollbar>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </body>
+</div>
+</body>
+
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+ 
+ $(document).ready(function() {
+    
+    var id =$('#check_box_id').val()+1;
+  
+    for(let i=id - 1; i>= 0; i--){
+        
+    $('#check_box_'+i+'').change(function() {
+      
+        if ($(this).prop('checked')) {
+        console.log('#widget_heading_'+i);
+     
+            $('#widget_heading_'+i).addClass("strike");
+            $('#widget_subheading_'+i).addClass("strike");
+        }
+        else {
+       
+
+            $('#widget_heading_'+i).removeClass("strike");
+            $('#widget_subheading_'+i).removeClass("strike");
+
+
+        }
+    });
+}
+});
+</script>
+<script>
+ 
+//     if(document.getElementById(check_box).checked){ 
+//         var hi = document.getElementById(check_box);
+//     alert(hi);
+// document.getElementById(widget_heading).style.textDecoration='line-through';
+
+// }else{
+
+// document.getElementById(widget_heading).style.textDecoration='none';
+
+// }
+</script>
