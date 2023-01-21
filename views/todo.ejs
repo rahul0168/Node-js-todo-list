@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -10,11 +12,10 @@
     </title>
     <!-- CSS only -->
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
     <!-- <link rel="stylesheet" href="/css/home.css"> -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 <div class="col-4">
                     <div class="form-group">
                         <label for="">Description</label>
-                        <input type="text" class="form-control" name="description" placeholder="Description" id="" />
+                        <input type="text" class="form-control" name="description" placeholder="Description" id="" required />
                     </div>
                 </div>
                 <div class="col-4">
@@ -130,7 +131,7 @@
 
 </html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
 
@@ -157,4 +158,3 @@ for (let i = id - 1; i >= 0; i--) {
 }
 });
 </script>
-
